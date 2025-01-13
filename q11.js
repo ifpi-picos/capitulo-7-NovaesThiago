@@ -10,5 +10,5 @@ for(let i=0; i<5; i++){
 
 filmes.forEach(function(filme, index){
     console.log(filmes[index])
-    console.log("Avaliação do filme: " (criticas[index]))
+    console.log("Avaliação do filme: " + criticas[index])
 })

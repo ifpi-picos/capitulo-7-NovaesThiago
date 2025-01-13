@@ -1,12 +1,10 @@
-const valor = Number(49.99)
-let quantidade = Number(50)
-
 const produto = {
-    preço: valor,
+    preço: 49.99,
     nomeDoProduto: "Cordas de Guitarra",
-    quantidade: quantidade,
+    quantidade: 50,
+    valorTotal: function(){
+        return this.preço*this.quantidade
+    }
 }
 
-let resultado = (valor*quantidade)
-
-console.log("O valor total do estoque é: ","R$", resultado)
+console.log("O valor total do estoque é: ","R$", produto.valorTotal())

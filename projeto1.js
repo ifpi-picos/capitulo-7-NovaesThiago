@@ -61,6 +61,12 @@ function removerItem (){
 
 }
 
+function ordenarLista(){
+    const ordemAlfabetica = listaDeCompras.sort((a, b) => a.localeCompare(b))
+    listaDeCompras = listaVazia
+    listaDeCompras = ordemAlfabetica
+}
+
 function pesquisarItem (){
     let item = prompt("INFORME O ITEM QUE DESEJA PESQUISAR: ")
     const encontrado = listaDeCompras.find(elemento => elemento === item)

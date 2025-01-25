@@ -74,7 +74,7 @@ function pesquisarFilme (){
 }
 
 function exibirLista (){
-    console.log(`LISTA DE FILMES: ${listaDeFilmes}`)
+    console.log(`LISTA DE FILMES PARA ASSISTIR: ${listaDeFilmes}`)
     console.log(`LISTA DE FILMES ASSISTIDOS: ${filmeAssistido}`)
 }
 

@@ -82,10 +82,14 @@ function marcaFilmeAssistido (){
     let item = prompt("INFORME O FILME JÁ ASSISTIDO: ")
 
     item = item.toLowerCase()
-    const index = listaDeCompras.indexOf(item)
+    const index = listaDeFilmes.indexOf(item)
 
-    filmeAssistido = listaDeFilmes.slice(index)
-    listaDeFilmes.push(filmeAssistido)
+    if (index !== -1) {
+        filmeAssistido.push(listaDeFilmes[index])
+        listaDeFilmes.splice(index, 1)
+    } else {
+        console.log("FILME NÃO ENCONTRADO NA LISTA.")
+    }
 }
 
 function removerFilme (){
@@ -105,3 +109,4 @@ function limparLista (){
     listaDeFilmes = listaVazia
 }
 
+menu()

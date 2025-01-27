@@ -53,7 +53,9 @@ function menu (){
 
 function adicionarFilme (){
     let filme = prompt("DIGITE O FILME QUE DESEJA ADICIONAR: ")
-    listaDeFilmes.push(filme)
+    let anoFilme = prompt("DIGITE O ANO DE LANÇAMENTO DO FILME: ")
+    let filmeObj = {nome: filme, ano: anoFilme};
+    listaDeFilmes.push(filmeObj)
 }
 
 function ordenarLista (){
@@ -74,15 +76,16 @@ function pesquisarFilme (){
 }
 
 function exibirLista (){
-    console.log(`LISTA DE FILMES PARA ASSISTIR: ${listaDeFilmes}`)
-    console.log(`LISTA DE FILMES ASSISTIDOS: ${filmeAssistido}`)
+    console.log("LISTA DE FILMES PARA ASSISTIR:");
+    listaDeFilmes.forEach(filme => console.log(`- ${filme.nome} (${filme.ano})`));
+    console.log("LISTA DE FILMES ASSISTIDOS:");
+    filmeAssistido.forEach(filme => console.log(`- ${filme.nome} (${filme.ano})`));
 }
 
 function marcaFilmeAssistido (){
-    let item = prompt("INFORME O FILME JÁ ASSISTIDO: ")
-
     item = item.toLowerCase()
-    const index = listaDeFilmes.indexOf(item)
+    let item = prompt("INFORME O FILME JÁ ASSISTIDO: ")
+    const index = listaDeFilmes.findIndex(filme => filme.nome === item)
 
     if (index !== -1) {
         filmeAssistido.push(listaDeFilmes[index])
@@ -97,7 +100,7 @@ function removerFilme (){
 
     item = item.toLowerCase()
 
-    const index = listaDeFilmes.indexOf(item)
+    const index = listaDeFilmes.findIndex(filme => filme.nome === item)
     if (index >=0 ){
         listaDeFilmes.splice(index, 1)
     } else{
